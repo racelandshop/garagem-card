@@ -32,7 +32,7 @@ const plugins = [
 
 export default [
   {
-    input: 'src/porta-card.ts',
+    input: 'src/garagem-card.ts',
     output: {
       dir: 'dist',
       format: 'es',
