@@ -54,7 +54,7 @@ export class BoilerplateCard extends LitElement {
       entitiesFallback,
       includeDomains
     );
-    return { type: "custom:garagem-card", entity: foundEntities[0] || "", "show_name": true, "show_state": true, "name": "Raceland", "show_preview": true, "icon": [sidegateClosed, sidegateOpen]};
+    return { type: "custom:garagem-card", entity: foundEntities[0] || "", "show_name": true, "show_state": true, "name": "Raceland", "show_preview": true, "icon": [garageOpen, garageClosed]};
   }
 
   @property({ attribute: false }) public hass!: HomeAssistant;
