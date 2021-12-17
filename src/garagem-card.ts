@@ -54,7 +54,7 @@ export class BoilerplateCard extends LitElement {
       entitiesFallback,
       includeDomains
     );
-    return { type: "custom:garagem-card", entity: foundEntities[0] || "", "show_name": true, "show_state": true, "name": "Raceland", "show_preview": true, "icon": [garageClosed, garageOpen]};
+    return { type: "custom:garagem-card", entity: foundEntities[0] || "", "show_name": true, "show_state": true, "name": "Raceland", "show_preview": true, "icon": [sidegateClosed, sidegateOpen]};
   }
 
   @property({ attribute: false }) public hass!: HomeAssistant;
@@ -138,7 +138,7 @@ export class BoilerplateCard extends LitElement {
       >
       ${this.config.show_icon
           ? html`
-            <svg class=${classMap({                
+            <svg class=${classMap({
                 "svgicon-garagem":
                   (JSON.stringify(this.config.icon) == JSON.stringify([garageOpen, garageClosed])),
                 "svgicon-sidegate":
@@ -148,7 +148,7 @@ export class BoilerplateCard extends LitElement {
             }
               viewBox="0 0 50 50" height="75%" width="65%" >
               <path fill="#a9b1bc" d=${this.config.icon[0]} />
-              <path class=${classMap({                
+              <path class=${classMap({
                 "state-on-garagem-icon":
                   ifDefined(stateObj? this.computeActiveState(stateObj) : undefined) === "on" && (JSON.stringify(this.config.icon)==JSON.stringify([garageOpen, garageClosed])),
                 "state-off-garagem-icon":
@@ -329,7 +329,7 @@ private computeActiveState = (stateObj: HassEntity): string => {
       .state {
         animation: state 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
       }
-      
+
       .state-on-garagem-icon {
         transform: scale(0);
         fill: #ffffff;
@@ -349,7 +349,7 @@ private computeActiveState = (stateObj: HassEntity): string => {
         fill: #a9b1bc;
         transition: all 2s ease;
         direction: 0px;
-      }     
+      }
 
       .garagem-icon.state-unavailable {
         color: var(--state-icon-unavailable-color, #bdbdbd);
