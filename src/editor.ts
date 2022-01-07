@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/camelcase */
 import { LitElement, html, TemplateResult, css, CSSResultGroup } from 'lit';
@@ -135,7 +137,7 @@ export class BoilerplateCardEditor extends LitElement implements LovelaceCardEdi
         attr-for-selected="value"
         .configValue=${"icon"}
         selected='1'
-        @iron-select=${this._changed_icon}>         
+        @iron-select=${this._changed_icon}>
           <paper-item class= "paper-item-garagem" .value=${[garageOpen, garageClosed]}>
               <svg class="svg-garagem" viewBox="0 0 24 24" height="24" width="24" >
               <path class="opacity" fill="#a9b1bc" d=${garageOpen}/>
